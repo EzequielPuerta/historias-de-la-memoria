@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import mongoengine
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -86,7 +87,16 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': ''
+    }
+}
+
+mongoengine.connect(
+    os.environ.get("MONGO_DB_DATABASE"),
+    host=os.environ.get("MONGO_DB_URI"),
+)
 
 
 # Password validation
