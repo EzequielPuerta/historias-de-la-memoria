@@ -19,7 +19,7 @@ def index(request):
 
 
 def execute_view(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         token = request.headers.get('Authorization')
         if token != f"Bearer {os.environ.get('CRON_SECRET')}":
             return JsonResponse({'error': 'Unauthorized'}, status=401)
