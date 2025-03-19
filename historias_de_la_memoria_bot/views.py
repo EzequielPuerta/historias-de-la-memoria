@@ -25,8 +25,8 @@ def execute_view(request):
             return JsonResponse({'error': 'Unauthorized'}, status=401)
         else:
             try:
-                result = execute()
-                return JsonResponse(result, status=200)
+                execute()
+                return JsonResponse("Bot executed", status=200)
             except Exception as e:
                 return JsonResponse({'error': str(e)}, status=500)
     return JsonResponse({'error': 'Invalid request method'}, status=400)
