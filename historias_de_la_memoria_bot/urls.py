@@ -1,8 +1,9 @@
 from django.urls import path
 
-from historias_de_la_memoria_bot.views import execute_view
+from historias_de_la_memoria_bot.views import index, execute_view
 
 
 urlpatterns = [
-    path('cronjobExecute', execute_view),
+    path('', index),
+    path('bot/execute', execute_view),
 ]

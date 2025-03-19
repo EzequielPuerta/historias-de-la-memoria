@@ -7,7 +7,7 @@
   ],
   "crons": [
     {
-      "path": "/api/cronjobExecute",
+      "path": "/bot/execute",
       "schedule": "*/2 * * * *"
     }
   ]

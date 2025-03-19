@@ -1,6 +1,21 @@
 import os
-from django.http import JsonResponse
+from datetime import datetime
+from django.http import JsonResponse, HttpResponse
 from historias_de_la_memoria_bot.tasks.main import execute
+
+
+def index(request):
+    now = datetime.now()
+
+    html = f'''
+    <html>
+        <body>
+            <h1>Hello!</h1>
+            <p>The current time is { now }.</p>
+        </body>
+    </html>
+    '''
+    return HttpResponse(html)
 
 
 def execute_view(request):
