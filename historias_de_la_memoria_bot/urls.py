@@ -1,8 +1,8 @@
 from django.urls import path
 
-from historias_de_la_memoria_bot.views import index
+from historias_de_la_memoria_bot.views import execute_view
 
 
 urlpatterns = [
-    path('', index),
+    path('', execute_view),
 ]
