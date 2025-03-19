@@ -1,4 +1,3 @@
-from typing import Any
 from logger import logger
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
@@ -33,10 +32,10 @@ def __histogram() -> None:
     return data
 
 
-def execute() -> list[dict[Any]]:
-    today = datetime.today()
-    total, victims = fetch_from_mongodb_on(today)
-    logger.info(f"SE EJECUTÓ: {total}")
+def execute() -> None:
+    logger.info(f"Bot executing")
+    total, victims = fetch_from_mongodb_on(datetime.today())
+    logger.info(f"Se ejecutó {total}")
     # XPublisher().publish_all(
     #     [Tweet(victim) for victim in victims],
     #     total=total)
