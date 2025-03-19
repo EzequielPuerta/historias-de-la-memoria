@@ -43,12 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_crontab',
     'historias_de_la_memoria_bot'
-]
-
-CRONJOBS = [
-    ('*/5 * * * *', 'historias_de_la_memoria_bot.task.murdered'),
 ]
 
 MIDDLEWARE = [
