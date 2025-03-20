@@ -62,7 +62,7 @@ class Tweet:
         return tweet_text
 
     def __create_links_text(self) -> str:
-        profile_text = f"👤 Perfil: {self.url}"
+        profile_text = f"👤 Fuente: {self.url}"
         if self.news_article:
             article_text = f" | 📰 Artículo: {self.news_article}"
         else:
