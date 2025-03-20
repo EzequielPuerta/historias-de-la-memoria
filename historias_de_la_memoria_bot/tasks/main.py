@@ -33,9 +33,9 @@ def __histogram() -> None:
 
 
 def execute() -> None:
-    logger.info(f"Bot executing")
+    logger.info("Bot executing")
     total, victims = fetch_from_mongodb_on(datetime.today())
-    logger.info(f"Se ejecutó {total}")
-    # XPublisher().publish_all(
-    #     [Tweet(victim) for victim in victims],
-    #     total=total)
+
+    XPublisher().publish_all(
+        [Tweet(victim) for victim in victims],
+        total=total)
