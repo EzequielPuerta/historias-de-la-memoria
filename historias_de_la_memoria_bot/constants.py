@@ -1,4 +1,4 @@
-DIR_PATH = "tmp"
+DIR_PATH = "/tmp/photos"
 
 OPENAI_TEMPERATURE = 0
 
