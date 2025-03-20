@@ -8,7 +8,7 @@
   "crons": [
     {
       "path": "/bot/execute",
-      "schedule": "20 15 * * *"
+      "schedule": "0 15 * * *"
     }
   ]
 }

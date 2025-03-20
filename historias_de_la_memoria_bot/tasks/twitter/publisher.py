@@ -63,7 +63,10 @@ class XPublisher:
             else:
                 logger.error("No response headers available.")
         except Exception as error:
-            logger.error(f"Error during publishing parent tweet: {error} | {str(error)}")
+            logger.error(f"Error during publishing parent tweet: {error}")
+            if hasattr(error, 'response') and error.response is not None:
+                logger.error(f"Full error response: {error.response.text}")
+                logger.error(f"Error headers: {error.response.headers}")
         else:
             try:
                 for tweet in tweets:
@@ -99,10 +102,13 @@ class XPublisher:
                 else:
                     logger.error("No response headers available.")
             except Exception as error:
-                logger.error(f"Error during publishing tweet related to {tweet._id}: {error} | {str(error)}")
+                logger.error(f"Error during publishing tweet related to {tweet._id}: {error}")
+                if hasattr(error, 'response') and error.response is not None:
+                    logger.error(f"Full error response: {error.response.text}")
+                    logger.error(f"Error headers: {error.response.headers}")
             finally:
                 try:
                     shutil.rmtree(DIR_PATH)
                     logger.debug("Temporary files deleted.")
                 except Exception as error:
-                    logger.error(f"Error during temporary folder deletion: {error}")
+                    logger.error(f"Error during temporary folder deletion, maybe it does not exist: {error}")
