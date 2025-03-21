@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 from historias_de_la_memoria_bot.tasks.db.fetch_db import fetch_from_mongodb_on
-from historias_de_la_memoria_bot.tasks.twitter.tweet import Tweet
+from historias_de_la_memoria_bot.tasks.twitter.victim_tweets import VictimTweets
 from historias_de_la_memoria_bot.tasks.twitter.publisher import XPublisher
 
 
@@ -37,5 +37,5 @@ def execute() -> None:
     total, victims = fetch_from_mongodb_on(datetime.today())
 
     XPublisher().publish_all(
-        [Tweet(victim) for victim in victims],
+        [VictimTweets(victim) for victim in victims],
         total=total)

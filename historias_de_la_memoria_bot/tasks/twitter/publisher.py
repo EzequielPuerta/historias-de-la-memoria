@@ -5,7 +5,7 @@ from logger import logger
 from datetime import datetime
 
 from historias_de_la_memoria_bot.constants import MONTH_NAMES, DIR_PATH
-from historias_de_la_memoria_bot.tasks.twitter.tweet import Tweet
+from historias_de_la_memoria_bot.tasks.twitter.victim_tweets import VictimTweets
 from historias_de_la_memoria_bot.tasks.picture_manager import download_picture
 from historias_de_la_memoria_bot.tasks.db.set_published import set_as_published
 
@@ -45,7 +45,7 @@ class XPublisher:
 
     def publish_all(
         self,
-        tweets: list[Tweet],
+        victim_tweets_list: list[VictimTweets],
         total: int,
     ) -> str:
         today = datetime.today()
@@ -69,27 +69,22 @@ class XPublisher:
                 logger.error(f"Error headers: {error.response.headers}")
         else:
             try:
-                for tweet in tweets:
-                    parameters = {
-                        'text': tweet.text,
-                        'in_reply_to_tweet_id': response.data['id'],
-                    }
-                    media_ids = []
-                    for photo in tweet.photos:
-                        logger.debug(f"Tweet {tweet._id} has {len(tweet.photos)} photos.")
-                        filename = download_picture(photo, tweet._id)
-                        file = self.API.media_upload(filename)
-                        media_ids.append(file.media_id)
-                    if media_ids:
-                        parameters['media_ids'] = media_ids
-                    response = self.CLIENT.create_tweet(**parameters)
-                    logger.info(f"Tweet related to {tweet._id} published on {datetime.now()}")
-
-                    response = self.CLIENT.create_tweet(
-                        text=tweet.links_text,
-                        in_reply_to_tweet_id=response.data['id'])
-                    logger.info(f"Tweet with links related to {tweet._id} published on {datetime.now()}")
-
+                for victim_tweets in victim_tweets_list:
+                    for tweet in victim_tweets.tweets:
+                        parameters = {
+                            'text': tweet.text,
+                            'in_reply_to_tweet_id': response.data['id'],
+                        }
+                        media_ids = []
+                        for photo in tweet.photos:
+                            logger.debug(f"Tweet {tweet._id} has {len(tweet.photos)} photos.")
+                            filename = download_picture(photo, tweet._id)
+                            file = self.API.media_upload(filename)
+                            media_ids.append(file.media_id)
+                        if media_ids:
+                            parameters['media_ids'] = media_ids
+                        response = self.CLIENT.create_tweet(**parameters)
+                        logger.info(f"Tweet related to {tweet._id} published on {datetime.now()}")
                     set_as_published(tweet._id, today)
                     logger.info(f"Desaparecido with id {tweet._id} marked as published on database")
             except tweepy.errors.TooManyRequests as error:

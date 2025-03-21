@@ -4,6 +4,8 @@ OPENAI_TEMPERATURE = 0
 
 MAX_AMOUNT_OF_DAILY_VICTIMS = 5
 
+X_CHARACTER_LIMIT = 280
+
 MONTH_NAMES = {
     1: 'Enero',
     2: 'Febrero',
