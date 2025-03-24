@@ -10,5 +10,6 @@
       "path": "/bot/execute",
       "schedule": "0 15 * * *"
     }
-  ]
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
