@@ -2,9 +2,9 @@ from logger import logger
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
-from historias_de_la_memoria_bot.tasks.db.fetch_db import fetch_from_mongodb_on
-from historias_de_la_memoria_bot.tasks.twitter.victim_tweets import VictimTweets
-from historias_de_la_memoria_bot.tasks.twitter.publisher import XPublisher
+from bot.tasks.db.fetch_db import fetch_from_mongodb_on
+from bot.tasks.twitter.victim_tweets import VictimTweets
+from bot.tasks.twitter.publisher import XPublisher
 
 
 load_dotenv(override=True)

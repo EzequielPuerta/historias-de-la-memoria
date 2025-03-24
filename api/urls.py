@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from spa.views import SpaView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('historias_de_la_memoria_bot.urls')),
+    path("bot/", include('bot.urls')),
+    path("", SpaView.as_view(), name="spa"),
 ]

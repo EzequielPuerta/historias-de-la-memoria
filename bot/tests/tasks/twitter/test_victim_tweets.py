@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
-from historias_de_la_memoria_bot.tasks.twitter.tweet import Tweet
-from historias_de_la_memoria_bot.tasks.twitter.victim_tweets import VictimTweets
+from bot.tasks.twitter.tweet import Tweet
+from bot.tasks.twitter.victim_tweets import VictimTweets
 
 
 def test___create_tweets_from_short_proposal() -> None:

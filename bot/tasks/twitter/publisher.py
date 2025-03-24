@@ -4,10 +4,10 @@ import shutil
 from logger import logger
 from datetime import datetime
 
-from historias_de_la_memoria_bot.constants import MONTH_NAMES, DIR_PATH
-from historias_de_la_memoria_bot.tasks.twitter.victim_tweets import VictimTweets
-from historias_de_la_memoria_bot.tasks.picture_manager import download_picture
-from historias_de_la_memoria_bot.tasks.db.set_published import set_as_published
+from bot.constants import MONTH_NAMES, DIR_PATH
+from bot.tasks.twitter.victim_tweets import VictimTweets
+from bot.tasks.picture_manager import download_picture
+from bot.tasks.db.set_published import set_as_published
 
 
 RATE_LIMIT_HEADERS = [

@@ -3,7 +3,7 @@ from typing import Any, Tuple
 from datetime import datetime
 from pymongo import MongoClient
 
-from historias_de_la_memoria_bot.constants import MAX_AMOUNT_OF_DAILY_VICTIMS
+from bot.constants import MAX_AMOUNT_OF_DAILY_VICTIMS
 
 
 MODEL_ATTRIBUTES = {

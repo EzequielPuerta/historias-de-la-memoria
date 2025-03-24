@@ -1,7 +1,7 @@
 import os
 import requests
 
-from historias_de_la_memoria_bot.constants import DIR_PATH
+from bot.constants import DIR_PATH
 
 
 def download_picture(url: str, _id: str) -> str:
