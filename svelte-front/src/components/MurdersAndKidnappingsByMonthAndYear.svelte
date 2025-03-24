@@ -31,7 +31,7 @@
 
     onMount(async () => {
         try {
-            const response = await fetch('api/murders-and-kidnappings-by-month-and-year/', {
+            const response = await fetch('backend-api/murders-and-kidnappings-by-month-and-year/', {
                 method: 'GET'
             });
             

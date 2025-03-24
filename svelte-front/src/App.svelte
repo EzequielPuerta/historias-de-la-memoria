@@ -84,7 +84,7 @@
         Porque las víctimas del Terrorismo de Estado no son solamente un número, son caras, nombres, hijos, padres, amores, amistades, historias que nos recuerdan lo importante de mantener viva la <strong>Memoria</strong>.
     </p>
 
-    <p>Este proyecto seguirá en crecimiento...</p>
+    <p><strong>Este proyecto seguirá en crecimiento...</strong></p>
 </main>
 
 <style>

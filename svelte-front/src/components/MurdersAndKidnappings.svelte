@@ -28,7 +28,7 @@
 
     onMount(async () => {
         try {
-            const response = await fetch('api/murders-and-kidnappings/', {
+            const response = await fetch('backend-api/murders-and-kidnappings/', {
                 method: 'GET',
             });
             if (!response.ok) {

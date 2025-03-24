@@ -22,7 +22,7 @@
 
     onMount(async () => {
         try {
-            const response = await fetch('api/nationalities-amounts/', {
+            const response = await fetch('backend-api/nationalities-amounts/', {
                 method: 'GET',
             });
 

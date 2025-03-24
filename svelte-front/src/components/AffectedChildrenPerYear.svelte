@@ -30,7 +30,7 @@
 
     onMount(async () => {
         try {
-            const response = await fetch('api/pregnants-per-year/', {
+            const response = await fetch('backend-api/pregnants-per-year/', {
                 method: 'GET',
             });
             if (!response.ok) {
@@ -49,7 +49,7 @@
             chartData.datasets[0].data = pregnantCounts;
 
             // ----
-            const childrenResponse = await fetch('api/children-amounts-by-year/', {
+            const childrenResponse = await fetch('backend-api/children-amounts-by-year/', {
                 method: 'GET'
             });
 

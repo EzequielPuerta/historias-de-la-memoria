@@ -22,7 +22,7 @@
 
     onMount(async () => {
         try {
-            const ageResponse = await fetch('api/min-and-max-ages', {
+            const ageResponse = await fetch('backend-api/min-and-max-ages', {
                 method: 'GET',
             });
             if (!ageResponse.ok) {
@@ -33,7 +33,7 @@
             maxAge = ageData[0].max_age;
 
             //----
-            const response = await fetch('api/age-amounts/', {
+            const response = await fetch('backend-api/age-amounts/', {
                 method: 'GET',
             });
 
