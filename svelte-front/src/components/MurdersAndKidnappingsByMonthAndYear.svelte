@@ -145,7 +145,7 @@
     });
 </script>
 
-<canvas id="murdersAndKidnappingsByMonthAndYearChart" width="800" height="400"></canvas>
+<canvas id="murdersAndKidnappingsByMonthAndYearChart" width="800" height="900"></canvas>
 
 <style>
     canvas {

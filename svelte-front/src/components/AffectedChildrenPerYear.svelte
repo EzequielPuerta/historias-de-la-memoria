@@ -125,7 +125,7 @@
     });
 </script>
 
-<canvas id="affectedChildrenPerYearChart" width="800" height="400"></canvas>
+<canvas id="affectedChildrenPerYearChart" width="800" height="900"></canvas>
 
 <style>
     canvas {

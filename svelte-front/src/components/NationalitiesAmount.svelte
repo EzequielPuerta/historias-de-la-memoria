@@ -121,7 +121,7 @@
     </div>
 </div>
 
-<canvas id="nationalitiesAmountChart" width="800" height="600"></canvas>
+<canvas id="nationalitiesAmountChart" width="800" height="900"></canvas>
 
 <style>
     canvas {
