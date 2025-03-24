@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from spa.views import SpaView
+from spa.views import SPAView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("bot/", include('bot.urls')),
-    path("", SpaView.as_view(), name="spa"),
+    path("", SPAView.as_view(), name="spa"),
 ]

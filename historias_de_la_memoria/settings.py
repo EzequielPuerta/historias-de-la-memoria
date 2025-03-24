@@ -48,12 +48,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'api.urls'
+ROOT_URLCONF = 'historias_de_la_memoria.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["api/templates"],
+        'DIRS': ["historias_de_la_memoria/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'api.wsgi.app'
+WSGI_APPLICATION = 'historias_de_la_memoria.wsgi.app'
 
 
 # Database
@@ -120,10 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "api", "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "historias_de_la_memoria", "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "api", "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "historias_de_la_memoria", "static"),)
 
 
 # Default primary key field type

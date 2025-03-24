@@ -36,7 +36,7 @@ export default {
             sourcemap: true,
             format: 'iife',
             name: 'app',
-            file: '../api/static/frontend/bundle.js'
+            file: '../historias_de_la_memoria/static/frontend/bundle.js'
         },
         {
             sourcemap: true,
@@ -74,7 +74,7 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('../api/static/frontend'),
+		!production && livereload('../historias_de_la_memoria/static/frontend'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
