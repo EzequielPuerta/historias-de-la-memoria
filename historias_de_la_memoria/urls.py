@@ -20,6 +20,7 @@ from spa.views import SPAView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", include('api.urls')),
     path("bot/", include('bot.urls')),
     path("", SPAView.as_view(), name="spa"),
 ]

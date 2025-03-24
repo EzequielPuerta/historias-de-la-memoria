@@ -4,7 +4,7 @@ from typing import Any
 from openai import OpenAI
 from logger import logger
 
-from bot.constants import OPENAI_TEMPERATURE, X_CHARACTER_LIMIT
+from historias_de_la_memoria.constants import OPENAI_TEMPERATURE, X_CHARACTER_LIMIT
 from bot.tasks.twitter.tweet import Tweet
 
 
