@@ -5,7 +5,7 @@ from api.children_amount_by_year.views import ChildrenAmountByYearList
 from api.genre_amount.views import GenreAmountList
 from api.genre_amount_by_year.views import GenreAmountByYearList
 from api.militancy_by_month_and_year.views import MilitancyByMonthAndYearList
-from api.min_and_max_ages.views import MixAndMaxAgesList
+from api.min_and_max_ages.views import MinAndMaxAgesList
 from api.murders_and_kidnappings.views import MurdersAndKidnappingsList
 from api.murders_and_kidnappings_by_month_and_year.views import MurdersAndKidnappingsByMonthAndYearList
 from api.nationalities_amount.views import NationalitiesAmountList
@@ -20,7 +20,7 @@ urlpatterns = [
     path('genre-amounts/', GenreAmountList.as_view(), name='genre-amount-list'),
     path('genre-amounts-by-year/', GenreAmountByYearList.as_view(), name='genre-amount-by-year-list'),
     path('militancy-by-month-and-year/', MilitancyByMonthAndYearList.as_view(), name='militancy-by-month-and-year-list'),
-    path('mix-and-max-ages/', MixAndMaxAgesList.as_view(), name='mix-and-max-ages-list'),
+    path('min-and-max-ages/', MinAndMaxAgesList.as_view(), name='min-and-max-ages-list'),
     path('murders-and-kidnappings/', MurdersAndKidnappingsList.as_view(), name='murders-and-kidnappings-list'),
     path('murders-and-kidnappings-by-month-and-year/', MurdersAndKidnappingsByMonthAndYearList.as_view(), name='murders-and-kidnappings-by-month-and-year-list'),
     path('nationalities-amounts/', NationalitiesAmountList.as_view(), name='nationalities-amount-list'),

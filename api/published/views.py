@@ -3,11 +3,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from historias_de_la_memoria.constants import MONTH_NAMES
 from api.published.models import Published
-from api.decorators import token_required
 
 
 class PublishedList(APIView):
-    @token_required
     def get(self, request):
         published_data = Published.objects()
         data = []

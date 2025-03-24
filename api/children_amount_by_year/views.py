@@ -2,11 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from api.children_amount_by_year.models import ChildrenAmountByYear
-from api.decorators import token_required
 
 
 class ChildrenAmountByYearList(APIView):
-    @token_required
     def get(self, request):
         children_amounts_by_year = ChildrenAmountByYear.objects()
         data = []

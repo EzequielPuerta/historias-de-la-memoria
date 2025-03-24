@@ -2,11 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from api.genre_amount.models import GenreAmount
-from api.decorators import token_required
 
 
 class GenreAmountList(APIView):
-    @token_required
     def get(self, request):
         genre_amounts = GenreAmount.objects()
         data = []
@@ -14,6 +12,6 @@ class GenreAmountList(APIView):
             data.append({
                 '_id': str(genre_amount._id),
                 'count': genre_amount.count,
-                'genre': genre_amount.genre,
+                'genre': genre_amount.genre if genre_amount.genre else 'Desconocido',
             })
         return Response(data, status=status.HTTP_200_OK)

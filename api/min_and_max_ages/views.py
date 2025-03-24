@@ -1,14 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from api.min_and_max_ages.models import MixAndMaxAges
-from api.decorators import token_required
+from api.min_and_max_ages.models import MinAndMaxAges
 
 
-class MixAndMaxAgesList(APIView):
-    @token_required
+class MinAndMaxAgesList(APIView):
     def get(self, request):
-        ages_data = MixAndMaxAges.objects()
+        ages_data = MinAndMaxAges.objects()
         data = []
         for ages in ages_data:
             data.append({

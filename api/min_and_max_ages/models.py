@@ -1,7 +1,7 @@
 from mongoengine import Document, IntField, ObjectIdField
 
 
-class MixAndMaxAges(Document):
+class MinAndMaxAges(Document):
     _id = ObjectIdField()
     min_age = IntField(required=True)
     max_age = IntField(required=True)

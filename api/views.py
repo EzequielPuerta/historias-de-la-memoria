@@ -1,11 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-from api.decorators import token_required
 
 
 @api_view(["GET"])
-@token_required
 def api_root(request, format=None):
     return Response(
         {
@@ -34,8 +32,8 @@ def api_root(request, format=None):
                 request=request,
                 format=format,
             ),
-            "mix-and-max-ages": reverse(
-                "mix-and-max-ages-list",
+            "min-and-max-ages": reverse(
+                "min-and-max-ages-list",
                 request=request,
                 format=format,
             ),

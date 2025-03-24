@@ -2,11 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from api.age_amount.models import AgeAmount
-from api.decorators import token_required
 
 
 class AgeAmountList(APIView):
-    @token_required
     def get(self, request):
         age_amounts = AgeAmount.objects()
         data = []

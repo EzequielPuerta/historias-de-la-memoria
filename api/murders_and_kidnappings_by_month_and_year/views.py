@@ -3,11 +3,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from historias_de_la_memoria.constants import MONTH_NAMES
 from api.murders_and_kidnappings_by_month_and_year.models import MurdersAndKidnappingsByMonthAndYear
-from api.decorators import token_required
 
 
 class MurdersAndKidnappingsByMonthAndYearList(APIView):
-    @token_required
     def get(self, request):
         data_records = MurdersAndKidnappingsByMonthAndYear.objects()
         data = []

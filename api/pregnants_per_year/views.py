@@ -2,11 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from api.pregnants_per_year.models import PregnantsPerYear
-from api.decorators import token_required
 
 
 class PregnantsPerYearList(APIView):
-    @token_required
     def get(self, request):
         pregnants_data = PregnantsPerYear.objects()
         data = []

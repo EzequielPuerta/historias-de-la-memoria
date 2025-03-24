@@ -74,7 +74,9 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('../historias_de_la_memoria/static/frontend'),
+		!production && livereload({
+            watch: '../historias_de_la_memoria/static/frontend',
+        }),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
