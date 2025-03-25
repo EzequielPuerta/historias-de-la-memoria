@@ -126,9 +126,12 @@
 
 <div class="max-w-sm mx-auto mb-4">
     <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
-        <h2 class="text-lg font-semibold text-gray-800">Rango de edad</h2>
-        <p class="text-md text-gray-700">Edad mínima: <span class="font-bold">{minAge}</span></p>
-        <p class="text-md text-gray-700">Edad máxima: <span class="font-bold">{maxAge}</span></p>
+        <h3 class="text-lg font-semibold text-gray-800">Rango de edad</h3>
+        <div class="flex-container">
+            <p class="text-md text-gray-700">Edad mínima: <span class="font-bold">{minAge}</span></p>
+            <p>&nbsp;-&nbsp;</p>
+            <p class="text-md text-gray-700">Edad máxima: <span class="font-bold">{maxAge}</span></p>
+        </div>
     </div>
 </div>
 
@@ -139,5 +142,11 @@
         max-width: 100%;
         height: auto;
         margin: 0 auto;
+    }
+    .flex-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
     }
 </style>

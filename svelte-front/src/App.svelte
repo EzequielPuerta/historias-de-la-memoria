@@ -116,7 +116,7 @@
         text-align: center;
         padding: 5em;
     }
-    h1, h2 {
+    h1, h2, h3 {
         margin: 2em;
     }
     p {

@@ -139,7 +139,7 @@
 <div class="flex-container">
     <div class="card max-w-sm mx-auto">
         <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
-            <h2 class="text-lg font-semibold text-gray-800">Cantidad total de Países</h2>
+            <h3 class="text-lg font-semibold text-gray-800">Cantidad total de Países</h3>
             <p class="text-2xl font-bold text-gray-900">{totalCountries}</p>
         </div>
     </div>
@@ -149,7 +149,7 @@
     </button>
 </div>
 
-<canvas id="nationalitiesAmountChart" width="800" height="900"></canvas>
+<canvas id="nationalitiesAmountChart" width="800" height="1300"></canvas>
 
 <style>
     canvas {

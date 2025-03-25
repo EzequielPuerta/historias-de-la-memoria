@@ -131,7 +131,7 @@
 
 <div class="max-w-sm mx-auto">
     <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
-        <h2 class="text-lg font-semibold text-gray-800">Cantidad total de embarazos</h2>
+        <h3 class="text-lg font-semibold text-gray-800">Cantidad total de embarazos</h3>
         <p class="text-2xl font-bold text-gray-900">{totalPregnants}</p>
     </div>
 </div>
