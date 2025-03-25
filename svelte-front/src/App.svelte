@@ -1,5 +1,5 @@
 <script>
-    import { Analytics } from "@vercel/analytics/react"
+    import { inject } from '@vercel/analytics';
     import { onMount } from "svelte";
     import MurdersAndKidnappings from './components/MurdersAndKidnappings.svelte';
     import MurdersAndKidnappingsByMonthAndYear from './components/MurdersAndKidnappingsByMonthAndYear.svelte';
@@ -16,6 +16,7 @@
         script.setAttribute("charset", "utf-8");
         document.body.appendChild(script);
     });
+    inject();
 </script>
 
 <main>
