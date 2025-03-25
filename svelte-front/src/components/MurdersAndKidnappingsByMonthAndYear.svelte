@@ -75,7 +75,8 @@
 
             sortedKeys.forEach(key => {
                 const { year, month, murders_count, kidnappings_count } = aggregatedData[key];
-                const monthLabel = `${month} ${year}`;
+                const shortMonth = month.slice(0, 3);
+                const monthLabel = `${shortMonth} ${year}`;
                 if (!months.includes(monthLabel)) {
                     months.push(monthLabel);
                 }
@@ -104,11 +105,14 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false,
+                        display: true,
                     },
                     title: {
                         display: true,
                         text: 'Asesinatos y desapariciones por mes y año'
+                    },
+                    datalabels: {
+                        display: false
                     },
                     zoom: {
                         pan: {

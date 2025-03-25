@@ -7,6 +7,7 @@
 
     Chart.register(...registerables, ChartDataLabels, zoomPlugin);
 
+    let totalPregnants = 0;
     let chart;
     let chartData = {
         labels: [],
@@ -47,6 +48,7 @@
 
             chartData.labels = years;
             chartData.datasets[0].data = pregnantCounts;
+            totalPregnants = data.reduce((n, {pregnant_count}) => n + pregnant_count, 0);
 
             // ----
             const childrenResponse = await fetch('backend-api/children-amounts-by-year/', {
@@ -124,6 +126,13 @@
         }
     });
 </script>
+
+<div class="max-w-sm mx-auto">
+    <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+        <h2 class="text-lg font-semibold text-gray-800">Cantidad total de embarazos</h2>
+        <p class="text-2xl font-bold text-gray-900">{totalPregnants}</p>
+    </div>
+</div>
 
 <canvas id="affectedChildrenPerYearChart" width="800" height="900"></canvas>
 

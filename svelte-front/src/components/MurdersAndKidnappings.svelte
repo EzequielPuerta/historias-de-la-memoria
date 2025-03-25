@@ -62,10 +62,6 @@
                         text: 'Cantidad de víctimas'
                     },
                     datalabels: {
-                        color: '#fff',
-                        formatter: (value, context) => {
-                            return value;
-                        },
                         anchor: 'end',
                         align: 'end'
                     }

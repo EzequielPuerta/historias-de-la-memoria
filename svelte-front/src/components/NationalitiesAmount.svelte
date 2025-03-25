@@ -7,9 +7,20 @@
 
     Chart.register(...registerables, ChartDataLabels, zoomPlugin);
 
-    let totalCountries = 0;
     let chart;
-    let chartData = {
+    let totalCountries = 0;
+    let showFirstElement = true;
+    let fullChartData = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Cantidad',
+                data: [],
+                backgroundColor: 'rgba(75, 192, 192, 1)',
+            }
+        ]
+    };
+    let filteredChartData = {
         labels: [],
         datasets: [
             {
@@ -38,8 +49,10 @@
                 nationalities.push(item.nationality);
                 counts.push(item.count);
             });
-            chartData.labels = nationalities;
-            chartData.datasets[0].data = counts;
+            fullChartData.labels = nationalities;
+            fullChartData.datasets[0].data = counts;
+            filteredChartData.labels = nationalities.slice(1);
+            filteredChartData.datasets[0].data = counts.slice(1);
             totalCountries = data.length;
             createChart();
         } catch (error) {
@@ -54,7 +67,7 @@
         }
         chart = new Chart(ctx, {
             type: 'bar',
-            data: chartData,
+            data: showFirstElement ? fullChartData : filteredChartData,
             options: {
                 responsive: true,
                 plugins: {
@@ -64,6 +77,9 @@
                     title: {
                         display: true,
                         text: 'Cantidad de víctimas por nacionalidad'
+                    },
+                    datalabels: {
+                        display: false
                     },
                     zoom: {
                         pan: {
@@ -107,6 +123,11 @@
         });
     }
 
+    function toggleFirstElement() {
+        showFirstElement = !showFirstElement;
+        createChart();
+    }
+
     onDestroy(() => {
         if (chart) {
             chart.destroy();
@@ -114,11 +135,17 @@
     });
 </script>
 
-<div class="max-w-sm mx-auto">
-    <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
-        <h2 class="text-lg font-semibold text-gray-800">Cantidad total de Países:</h2>
-        <p class="text-2xl font-bold text-gray-900">{totalCountries}</p>
+<div class="flex-container">
+    <div class="card max-w-sm mx-auto">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+            <h2 class="text-lg font-semibold text-gray-800">Cantidad total de Países</h2>
+            <p class="text-2xl font-bold text-gray-900">{totalCountries}</p>
+        </div>
     </div>
+
+    <button on:click={toggleFirstElement}>
+        {showFirstElement ? 'Ocultar argentinos' : 'Mostrar argentinos'}
+    </button>
 </div>
 
 <canvas id="nationalitiesAmountChart" width="800" height="900"></canvas>
@@ -128,5 +155,16 @@
         max-width: 100%;
         height: auto;
         margin: 0 auto;
+    }
+    
+    .flex-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        margin-right: 3em;
     }
 </style>

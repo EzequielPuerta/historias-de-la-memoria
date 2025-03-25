@@ -18,5 +18,5 @@ MONTH_NAMES = {
     9: 'Septiembre',
     10: 'Octubre',
     11: 'Noviembre',
-    12: 'Diciembre,'
+    12: 'Diciembre',
 }

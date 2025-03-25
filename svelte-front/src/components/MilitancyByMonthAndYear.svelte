@@ -44,7 +44,6 @@
             data.forEach(item => {
                 const year = item.year;
                 const month = item.month;
-                const monthIndex = monthOrder.indexOf(month);
                 const key = `${year}-${month}`;
 
                 if (!aggregatedData[key]) {
@@ -67,6 +66,7 @@
             const sortedKeys = Object.keys(aggregatedData).sort((a, b) => {
                 const [yearA, monthA] = a.split('-');
                 const [yearB, monthB] = b.split('-');
+                
                 if (yearA === yearB) {
                     return monthOrder.indexOf(monthA) - monthOrder.indexOf(monthB);
                 }
@@ -75,7 +75,8 @@
 
             sortedKeys.forEach(key => {
                 const { year, month, with_militancy, without_militancy } = aggregatedData[key];
-                const monthLabel = `${month} ${year}`;
+                const shortMonth = month.slice(0, 3);
+                const monthLabel = `${shortMonth} ${year}`;
                 if (!months.includes(monthLabel)) {
                     months.push(monthLabel);
                 }
@@ -104,11 +105,14 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false,
+                        display: true,
                     },
                     title: {
                         display: true,
                         text: 'Víctimas militantes por mes y año'
+                    },
+                    datalabels: {
+                        display: false
                     },
                     zoom: {
                         pan: {
@@ -133,6 +137,7 @@
                     y: {
                         beginAtZero: true,
                     }
+                    
                 }
             }
         });

@@ -64,10 +64,6 @@
                         text: 'Cantidad de víctimas por sexo'
                     },
                     datalabels: {
-                        color: '#fff',
-                        formatter: (value, context) => {
-                            return value;
-                        },
                         anchor: 'end',
                         align: 'end'
                     }
@@ -85,7 +81,7 @@
 
 <div class="max-w-sm mx-auto">
     <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
-        <h2 class="text-lg font-semibold text-gray-800">Víctimas totales:</h2>
+        <h2 class="text-lg font-semibold text-gray-800">Víctimas totales</h2>
         <p class="text-2xl font-bold text-gray-900">{totalVictims}</p>
     </div>
 </div>
