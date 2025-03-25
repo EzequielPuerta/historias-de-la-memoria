@@ -70,6 +70,7 @@
             data: showFirstElement ? fullChartData : filteredChartData,
             options: {
                 responsive: true,
+                indexAxis: 'y',
                 plugins: {
                     legend: {
                         display: true,
@@ -94,7 +95,7 @@
                                 enabled: true
                             },
                             enabled: true,
-                            mode: 'x',
+                            mode: 'y',
                             speed: 0.1,
                             threshold: 2
                         }
@@ -104,18 +105,18 @@
                     x: {
                         title: {
                             display: true,
+                            text: 'Cantidad'
+                        },
+                        beginAtZero: true,
+                    },
+                    y: {
+                        title: {
+                            display: true,
                             text: 'Nacionalidades'
                         },
                         ticks: {
-                            maxRotation: 90,
-                            minRotation: 90,
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Cantidad'
+                            maxRotation: 0,
+                            minRotation: 0,
                         }
                     }
                 }
