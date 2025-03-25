@@ -19,9 +19,11 @@ cd svelte-front
 npm run dev
 ```
 
-## Svelte: Build
+## Build
 
 ```bash
 cd svelte-front
 npm run build
+cd ..
+python manage.py collectstatic
 ```
