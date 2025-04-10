@@ -40,11 +40,11 @@
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            const years = [];
+            data.sort((a, b) => a.year - b.year);
+            const years = data.map(item => item.year);
             const pregnantCounts = [];
 
             data.forEach(item => {
-                years.push(item.year);
                 pregnantCounts.push(item.pregnant_count);
             });
 

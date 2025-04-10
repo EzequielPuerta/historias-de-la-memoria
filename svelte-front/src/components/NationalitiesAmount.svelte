@@ -42,13 +42,10 @@
             }
 
             const data = await response.json();
-            const nationalities = [];
-            const counts = [];
+            data.sort((a, b) => b.count - a.count);
+            const nationalities = data.map(item => item.nationality);
+            const counts = data.map(item => item.count);
 
-            data.forEach(item => {
-                nationalities.push(item.nationality);
-                counts.push(item.count);
-            });
             fullChartData.labels = nationalities;
             fullChartData.datasets[0].data = counts;
             filteredChartData.labels = nationalities.slice(1);
