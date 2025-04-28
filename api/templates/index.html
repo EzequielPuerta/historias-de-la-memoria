@@ -8,13 +8,12 @@
 
     <title>Historias de la Memoria</title>
 
-    <link rel='icon' type='image/png' href="{% static 'frontend/favicon.png' %}">
-    <link rel='stylesheet' href="{% static 'frontend/global.css' %}">
-    <link rel='stylesheet' href="{% static 'frontend/bundle.styles.css' %}">
-
-    <script defer src="{% static 'frontend/bundle.js' %}"></script>
+    <link rel='icon' type='image/png' href="{% static 'favicon.png' %}">
+    <link rel='stylesheet' href="{% static 'assets/bundle.styles.css' %}">
 </head>
 
 <body>
+    <div id="app"></div>
+    <script type="module" src="{% static 'assets/bundle.js' %}"></script>
 </body>
 </html>

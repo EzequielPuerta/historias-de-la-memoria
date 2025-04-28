@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "Root",
+      "path": "..",
+    },
+    {
+      "name": "Frontend (Svelte)",
+      "path": "../svelte-front"
+    }
+  ],
+  "settings": {
+    "tailwindCSS.includeLanguages": {
+      "svelte": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["class:([\\w\\d-_]+)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ]
+  }
+}
