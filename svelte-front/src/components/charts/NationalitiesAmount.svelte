@@ -133,14 +133,14 @@
     });
 </script>
 
-<div class="flex justify-center items-center gap-10">
+<div class="flex flex-col sm:flex-row justify-center items-center gap-10">
     <ValueCard title="Cantidad total de Países" value={totalCountries} />
 
     <div class="divider divider-horizontal"></div>
 
     <button
         on:click={toggleFirstElement}
-        class="btn btn-primary"
+        class="btn btn-primary w-full sm:w-auto"
     >
         {showFirstElement ? 'Ocultar argentinos' : 'Mostrar argentinos'}
     </button>

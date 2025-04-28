@@ -1,13 +1,14 @@
 <script lang="ts">
     import {push} from "svelte-spa-router"
 
-    export let title;
-    export let slug;
-    export let is_new = false;
-    export let abstract;
-    export let tags;
-    export let photo;
-    export let alt_photo = "";
+    export let title: string;
+    export let slug: string;
+    export let is_new: boolean = false;
+    export let date: Date;
+    export let abstract: string;
+    export let tags: string[] = [];
+    export let photo: string;
+    export let alt_photo: string = "";
 </script>
 
 <div class="card bg-primary w-70 shadow-lg">
@@ -20,7 +21,11 @@
             <img
                 src={photo}
                 alt={alt_photo}
+                class="w-full h-auto"
             />
+            <div class="absolute top-2 right-2 bg-black bg-opacity-90 text-white text-xs px-2 py-1 rounded">
+                {date.toLocaleDateString('es-AR', { day: '2-digit', month: 'short', year: 'numeric' })}
+            </div>
         </figure>
         <div class="card-body h-60">
             <h2 class="card-title">
