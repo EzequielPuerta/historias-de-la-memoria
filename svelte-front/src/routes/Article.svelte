@@ -1,8 +1,10 @@
 <script>
-    import { push } from 'svelte-spa-router';
     import { onMount } from 'svelte';
+    import { push } from 'svelte-spa-router';
+    import { articles } from '../articles/index.js';
 
     let ArticleComponent = null;
+    let articleMetadata = null;
     export let params = {};
 
     async function loadArticle(slug) {
@@ -10,7 +12,8 @@
         try {
             const module = await import(`../articles/${slug}.svelte`);
             ArticleComponent = module.default;
-        } catch (err) {
+            articleMetadata = articles.find(a => a.slug === slug);
+        } catch (error) {
             push('/404');
         }
     }
@@ -23,6 +26,16 @@
 </script>
 
 {#if ArticleComponent}
+    <h1>{articleMetadata.abstract}</h1>
+    <div class="divider textarea-xl pt-10">{articleMetadata.date.toLocaleDateString('es-AR', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+    <div class="py-10">
+        <img
+            src={articleMetadata.photo}
+            alt={articleMetadata.alt_photo}
+            class="w-full h-auto"
+        />
+    </div>
+    <div class="divider pb-10">{articleMetadata.caption}</div>
     <svelte:component this={ArticleComponent} />
 {:else}
     <div class="flex justify-center p-8">

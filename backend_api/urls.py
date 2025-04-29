@@ -11,6 +11,7 @@ from backend_api.murders_and_kidnappings_by_month_and_year.views import MurdersA
 from backend_api.nationalities_amount.views import NationalitiesAmountList
 from backend_api.pregnants_per_year.views import PregnantsPerYearList
 from backend_api.published.views import PublishedList
+from backend_api.related_victims.views import RelatedVictimsList
 
 
 urlpatterns = [
@@ -26,4 +27,5 @@ urlpatterns = [
     path('nationalities-amounts/', NationalitiesAmountList.as_view(), name='nationalities-amount-list'),
     path('pregnants-per-year/', PregnantsPerYearList.as_view(), name='pregnants-per-year-list'),
     path('published/', PublishedList.as_view(), name='published-list'),
+    path('related-victims/', RelatedVictimsList.as_view(), name='related-victims-list'),
 ]

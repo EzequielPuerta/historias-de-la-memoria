@@ -3,7 +3,6 @@
 </script>
 
 <div>
-    <h1>¿Cuál fue el impacto del Terrorismo de Estado en las infancias vinculadas a las víctimas?</h1>
     <p class="py-3">
         Conocemos también muchos casos de personas embarazadas que fueron víctimas del accionar represivo del Estado durante dicho período. Si contabilizamos los mismos, agrupados por año, podemos obtener la cantidad de víctimas embarazadas al momento de ser secuestradas o asesinadas. Muchos de esos embarazos son casos de nietos y nietas recuperados por Las Abuelas de Plaza de Mayo.
     </p>

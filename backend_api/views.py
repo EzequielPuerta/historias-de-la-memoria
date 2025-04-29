@@ -62,5 +62,10 @@ def api_root(request, format=None):
                 request=request,
                 format=format,
             ),
+            "related-victims": reverse(
+                "related-victims-list",
+                request=request,
+                format=format,
+            ),
         }
     )

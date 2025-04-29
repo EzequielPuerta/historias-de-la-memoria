@@ -3,7 +3,6 @@
 </script>
 
 <div>
-    <h1>¿Qué se sabe sobre la militancia de las víctimas?</h1>
     <p class="py-3">
         Algo interesante que se puede observar en los datos sobre los desaparecidos y asesinados por el Terrorismo de Estado, es su actividad militante. En muchos casos, se conoce si militaban y en que espacios lo hacían.
     </p>

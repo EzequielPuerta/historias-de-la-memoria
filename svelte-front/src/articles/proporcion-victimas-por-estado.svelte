@@ -4,7 +4,6 @@
 </script>
 
 <div>
-    <h1>¿Cuál es la distribución de las víctimas según su estado?</h1>
     <p class="py-3">
         También podemos agrupar a las víctimas por si se sabe que fueron asesinadas o secuestradas y desaparecidas (no se conoce su paradero, por lo tanto no se puede confirmar su asesinato).
     </p>
