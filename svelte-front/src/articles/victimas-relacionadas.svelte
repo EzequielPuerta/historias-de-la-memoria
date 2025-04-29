@@ -388,7 +388,7 @@
         <figcaption>La familia Oesterheld en su casa de Béccar, durante <em>"los años felices"</em>.</figcaption>
     </figure>
 
-    <div class="divider">¿Que otras familias fueron destruidas?</div>
+    <div class="divider whitespace-normal break-words text-center py-10 px-4 sm:px-0">¿Que otras familias fueron destruidas?</div>
 
     <p class="py-3">
         La <strong class="text-primary"><a href="http://basededatos.parquedelamemoria.org.ar" target="_blank">Base de Datos de Consulta Pública del Parque de la Memoria</a></strong> posee la relación familiar de un gran porcentaje de las víctimas totales. Si representamos a cada víctima como un <em>nodo</em> y usamos esa información familiar para generar enlaces entre los mismos, podremos así crear una red.
@@ -421,7 +421,7 @@
         Son demasiadas familias aisladas unas de otras... es difícil poder apreciar algo en la nube de nombres y relaciones.
     </p>
 
-    <div class="divider">Filtremos a las familias por la cantidad de sus víctimas</div>
+    <div class="divider whitespace-normal break-words text-center py-10 px-4 sm:px-0">Filtremos a las familias por la cantidad de sus víctimas</div>
 
     <p class="py-3">
         De esta manera se observa que las familias mas golpeadas fueron los <span class="text-primary">Santucho</span> con 9 víctimas relacionadas en la <strong>Base de Datos</strong>, y los <span class="text-primary">Oesterheld</span>, con 8 víctimas (de las 10 víctimas conocidas y mencionadas anteriormente, no se cuentan los nietos nonatos de Héctor ya que no poseen una entrada propia en la <strong>Base de Datos</strong>).

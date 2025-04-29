@@ -4,6 +4,7 @@
     import Home from './routes/Home.svelte';
     import Article from './routes/Article.svelte';
     import NotFound404 from './routes/NotFound404.svelte';
+    import SocialButtons from './components/SocialButtons.svelte';
 
     let routes = {
         "/": Home,
@@ -16,13 +17,16 @@
 </script>
 
 <main>
-    <div class="navbar bg-primary shadow-sm">
+    <div class="navbar bg-primary shadow-sm fixed top-0 left-0 right-0 z-50">
         <a href="/" class="btn btn-ghost text-xl">Historias de la Memoria</a>
     </div>
 
-    <div class="max-w-screen-lg mx-auto p-8">
-        <Router {routes}/>
-    </div>
+    <main class="pt-16">
+        <div class="max-w-screen-lg mx-auto p-8">
+            <Router {routes}/>
+            <SocialButtons />
+        </div>
+    </main>
 
     <footer class="footer flex flex-col sm:flex-row justify-between items-center bg-neutral text-neutral-content p-4">
         <aside class="flex items-center gap-2">

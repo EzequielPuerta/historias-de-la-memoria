@@ -19,7 +19,7 @@ export const articles = [
         tags: ["Serie temporal"],
         photo: "/static/militancia.jpg",
         alt_photo: "Militancia",
-        caption: ""
+        caption: "Llamamos militancia a la participación en org. sociales, gremiales, políticas y guerrilleras por igual."
     },
     {
         slug: 'victimas-por-edad',
